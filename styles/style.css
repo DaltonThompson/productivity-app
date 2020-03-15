@@ -1,0 +1,67 @@
+*, *::before, *::after {
+  background-color: #1c1c46;
+  color: #bbffe8;
+  font-family: sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: #bbffe8;
+  color: #1c1c46;
+  padding: 1em;
+  margin: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45.5%;
+  font-size: 1em;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.button-container {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.progress-bar {
+  width: 94%;
+  height: 3em;
+  background-color: #bbffe8;
+  margin: 1em auto;
+}
+
+#bar-fill {
+  background-color: #1c1c46;
+  width: calc(100% - 1em);
+  height: 2em;
+  position: relative;
+  top: calc(50% - 1em);
+  margin: 0 auto;
+}
+
+table {
+  margin: 1em;
+}
+/*# sourceMappingURL=style.css.map */

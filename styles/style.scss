@@ -1,0 +1,52 @@
+$color1: rgb(187, 255, 232);
+$color2: rgb(28, 28, 70);
+
+*, *::before, *::after {
+    background-color: $color2;
+    color: $color1;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+button {
+    border: none;
+    background-color: $color1;
+    color: $color2;
+    padding: 1em;
+    margin: 0;
+    align-items: center;
+    width: 45.5%;
+    font-size: 1em;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+h2 {
+    font-family:'Courier New', Courier, monospace
+}
+.button-container {
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+.progress-bar {
+    width:94%;
+    height: 3em;
+    background-color: $color1;
+    margin: 1em auto;
+}
+#bar-fill {
+    background-color: $color2;
+    width: calc(100% - 1em);
+    height: 2em;
+    position: relative;
+    top: calc(50% - 1em);
+    margin: 0 auto;
+}
+table {
+    margin: 1em;
+}

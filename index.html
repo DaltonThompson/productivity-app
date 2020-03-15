@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <main>
+        <h1>Pomodoro Timer</h1>
+        <h2></h2>
+        <h3>Let's get started!</h3>
+        <div class="button-container">
+            <button id="work">WORK</button>
+            <button id="stretch">STRETCH</button>
+        </div>
+        <div id="ratio-bar" class="progress-bar">
+            <div id="bar-fill"></div>
+        </div>
+        <table>
+            <tr>
+                <td>Time spent working:</td>
+                <td><span id="tally-work">0</span></td>
+            </tr>
+            <tr>
+                <td>Time spent on break:</td>
+                <td><span id="tally-break">0</span></td>
+            </tr>
+            <tr>
+                <td><span id="saved-label">Saved break time:</span></td>
+                <td><span id="saved-break">0</span></td>
+            </tr>
+        </table>
+        <audio id="horseSound">
+            <source src="https://www.w3schools.com/jsref/horse.ogg" type="audio/ogg">
+            <source src="https://www.w3schools.com/jsref/horse.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
