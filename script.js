@@ -67,11 +67,13 @@ function selectState(boolean) {
         workState = true;
         let workTime = getWorkTime()
         setTimeout(function(){ horse.play(); }, (workTime*60)*1000 - 3000);
+        // play sound once reach to the work time goal
         goalpost.setMinutes(currentTime.getMinutes() + workTime);
         goal.innerHTML = 'Alright, back to work! Try to keep going until ' + calculateTime(goalpost) + '. Then, take a minute to plan your next task before you take a break.';
     } else {
         workState = false;
         goalpost.setMinutes(timerLastUpdated.getMinutes() + 4);
+        // play sound every two minutes
         setInterval(function(){ horse.play(); }, 120000);
         goal.innerHTML = 'Let\'s make this short. Walk around until ' + calculateTime(goalpost) + '!';
 
