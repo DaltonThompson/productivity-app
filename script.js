@@ -5,9 +5,15 @@ let goal = document.getElementsByTagName('h3')[0];
 let title = document.getElementsByTagName('title')[0];
 let horse = document.getElementById("horseSound");
 
-
-work.addEventListener("click", event => selectState(true));
-stretch.addEventListener("click", event => selectState(false));
+// get desired interval from user
+function getWorkTime() {
+    let userTime = Number(prompt("How many minutes would you like to work?"));
+    while (isNaN(userTime) || userTime<= 0) {
+      alert("Sorry, you did not enter a valid number.");
+      userTime = Number(prompt("How many minutes would you like to work?"));
+    }
+    return userTime
+}
 
 let timeElapsed = 0;
 let goalpost = new Date();
@@ -52,18 +58,23 @@ let interval = setInterval(() => {
         prependZero(Math.floor(tally.earned%60));
     timerLastUpdated = currentTime;
 
-    if (tally.earned < 0 && workState == false) horse.play();
+    // if (tally.earned < 0 && workState == false) horse.play()
+    
 },1000);
 
 function selectState(boolean) {
     if (boolean == true) {
         workState = true;
-        goalpost.setMinutes(timerLastUpdated.getMinutes() + 23);
+        let workTime = getWorkTime()
+        setTimeout(function(){ horse.play(); }, (workTime*60)*1000 - 3000);
+        goalpost.setMinutes(currentTime.getMinutes() + workTime);
         goal.innerHTML = 'Alright, back to work! Try to keep going until ' + calculateTime(goalpost) + '. Then, take a minute to plan your next task before you take a break.';
     } else {
         workState = false;
         goalpost.setMinutes(timerLastUpdated.getMinutes() + 4);
+        setInterval(function(){ horse.play(); }, 120000);
         goal.innerHTML = 'Let\'s make this short. Walk around until ' + calculateTime(goalpost) + '!';
+
     };
 }
 
@@ -85,3 +96,6 @@ let addTime = (timeSource,addedValue) => {
         return timeSource.getMinutes() + addedValue;
     }
 }
+
+work.addEventListener("click", event => selectState(true));
+stretch.addEventListener("click", event => selectState(false));
