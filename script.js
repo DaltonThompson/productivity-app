@@ -68,11 +68,11 @@ function selectState(boolean) {
         let workTime = getWorkTime();
         setTimeout(function(){
             horse.play();
-            goal.innerText = 'You can take a break now.';
+            goal.innerText = 'Take a minute to plan your next task, and then take a break.';
         }, (workTime*60)*1000 - 3000);
         // play sound once reach to the work time goal
         goalpost.setMinutes(currentTime.getMinutes() + workTime);
-        goal.innerText = 'Alright, back to work! Try to keep going until ' + calculateTime(goalpost) + '. Then, take a minute to plan your next task before you take a break.';
+        goal.innerText = 'Alright, back to work! Try to keep going until ' + calculateTime(goalpost);
     } else {
         workState = false;
         goalpost.setMinutes(timerLastUpdated.getMinutes() + 4);
